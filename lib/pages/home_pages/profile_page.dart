@@ -62,6 +62,15 @@ class _UserProfileState extends State<UserProfile> {
         automaticallyImplyLeading: false,
         centerTitle: true,
         title: const Text('Профиль'),
+        actions: [
+          IconButton(
+            onPressed: (){
+              FirebaseAuth.instance.signOut();
+              Navigator.pushNamed(context, '/');
+            }, 
+            icon: const Icon(Icons.logout)
+          )
+        ],
       ),
       resizeToAvoidBottomInset:true,
       body: SingleChildScrollView(

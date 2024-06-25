@@ -31,7 +31,7 @@ class _Login_PageState extends State<Login_Page> {
       throw Exception('неудалось войти');
     }
     // ignore: use_build_context_synchronously
-    Navigator.pushReplacementNamed(context, 'home');
+    Navigator.pushReplacementNamed(context, 'roleCheck');
    } 
 
    catch (e) {
@@ -77,7 +77,7 @@ class _Login_PageState extends State<Login_Page> {
               child: TextButton(
                 onPressed: () {
                   _login(_emailController.text, _passwordController.text);
-                  Navigator.pushNamed(context, 'reset_password');
+                  Navigator.pushNamed(context, 'roleCheck');
                 },
                 child: const Text('Забыле пароль ?',style: bf14w6,),
               ),

@@ -16,7 +16,11 @@ class CloudService{
     final FirebaseFirestore firestore = FirebaseFirestore.instance;
     DocumentSnapshot document = await firestore.collection('users').doc(userId).get();
     return document;
-    
+  }
+  Future getRole(String userId)async{
+    final FirebaseFirestore firestore = FirebaseFirestore.instance;
+    DocumentSnapshot doc = await firestore.collection('users').doc(userId).get();
+    return doc['role'];
   }
 }
 
